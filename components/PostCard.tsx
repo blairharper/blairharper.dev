@@ -11,7 +11,9 @@ export default function PostCard(post: {
   return (
     <div className="max-w-3xl overflow-hidden rounded shadow-lg">
       <Image
-        className="w-full"
+        width={800}
+        height={500}
+        layout="responsive"
         src={post.feature_image}
         alt={post.feature_image_alt ?? ''}
       />

@@ -1,16 +1,16 @@
 import Link from 'next/link';
-
+import Image from 'next/image';
 export default function PostCard(post: {
   slug: string;
   title: string;
   excerpt: string;
   feature_image: string;
   feature_image_alt?: string;
-  tags?: Array<object>;
+  tags;
 }) {
   return (
     <div className="max-w-3xl overflow-hidden rounded shadow-lg">
-      <img
+      <Image
         className="w-full"
         src={post.feature_image}
         alt={post.feature_image_alt ?? ''}
@@ -24,8 +24,10 @@ export default function PostCard(post: {
       <div className="px-6 pt-4 pb-2">
         {post.tags &&
           post.tags.map((tag) => (
-            <span className="mr-2 mb-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700">
-              {tag}
+            <span
+              key={tag.name}
+              className="mr-2 mb-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700">
+              {tag.name}
             </span>
           ))}
       </div>

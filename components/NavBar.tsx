@@ -45,7 +45,7 @@ const NavBar = () => {
         </div>
         <ul className="flex">
           {LINKS.map(({name, href}) => (
-            <NavLink href={href} name={name} />
+            <NavLink href={href} name={name} key={name} />
           ))}
         </ul>
       </nav>

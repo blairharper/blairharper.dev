@@ -20,6 +20,7 @@ export async function getSinglePost(postSlug: string) {
   return await api.posts
     .read({
       slug: postSlug,
+      include: 'tags',
     })
     .catch((err: object) => {
       console.error(err);

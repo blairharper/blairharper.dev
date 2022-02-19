@@ -1,19 +1,18 @@
 import {getPosts} from '../lib/posts';
 import Link from 'next/link';
+import PostCard from '../components/PostCard';
 
 export default function Home(props: any) {
   return (
-    <>
-      <ul>
+    <div>
+      <ul className="grid grid-flow-row gap-6">
         {props.posts.map((post) => (
           <li key={post.id}>
-            <Link href={`/posts/${post.slug}`}>
-              <a>{post.title}</a>
-            </Link>
+            <PostCard {...post} />
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 

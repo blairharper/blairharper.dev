@@ -18,6 +18,7 @@ function NavLink({href, name}: {href: string; name: string}) {
     <li className="px-5 py-2" key={name}>
       <Link href={href}>
         <a
+          key={href}
           className={clsx(
             'underlined hover:text-team-current focus:text-team-current block whitespace-nowrap text-lg font-medium focus:outline-none',
             {

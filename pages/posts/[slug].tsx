@@ -8,8 +8,9 @@ export async function getStaticPaths() {
     params: {slug: post.slug},
   }));
 
-  // { fallback: false } means 'posts not found' should 404.
-  return {paths, fallback: false};
+  // { fallback: false } means will attempt to generate paths (SSR) for posts that do not exist
+  // i.e. posts that have been added since to the CMS since the last time a build was run
+  return {paths, fallback: 'blocking'};
 }
 
 // Pass the page slug over to the "getSinglePost" function
@@ -18,11 +19,8 @@ export async function getStaticProps(context: {params: {slug: string}}) {
   const post = await getSinglePost(context.params.slug);
 
   if (!post) {
-    return {
-      notFound: true,
-    };
+    return {redirect: '/', permanent: false}; // redirect to main blog posts page if post doesn't exist
   }
-
   return {
     props: {post},
   };

@@ -18,7 +18,7 @@ export default function PostCard(post: {
         alt={post.feature_image_alt ?? ''}
       />
       <div className="px-6 py-4">
-        <Link href={`/posts/${post.slug}`}>
+        <Link href={`/blog/${post.slug}`}>
           <a className="mb-2 text-xl font-bold">{post.title}</a>
         </Link>
         <p className="text-base text-gray-700">{post.excerpt}</p>

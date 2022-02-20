@@ -1,5 +1,5 @@
 import {getSinglePost, getPosts} from '../../lib/posts';
-
+import Image from 'next/image';
 export async function getStaticPaths() {
   const posts = await getPosts();
 
@@ -28,9 +28,14 @@ export async function getStaticProps(context: {params: {slug: string}}) {
 
 export default function PostPage(props: any) {
   return (
-    <div>
-      <h1>{props.post.title}</h1>
-      <div dangerouslySetInnerHTML={{__html: props.post.html}} />
+    <div className="gh-canvas">
+      <h1 className="text-3xl">{props.post.title}</h1>
+      <Image width={800} height={500} src={props.post.feature_image} />
+
+      <div
+        className="gh-content"
+        dangerouslySetInnerHTML={{__html: props.post.html}}
+      />
     </div>
   );
 }

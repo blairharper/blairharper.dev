@@ -27,13 +27,23 @@ export async function getStaticProps(context: {params: {slug: string}}) {
 }
 
 export default function PostPage(props: any) {
+  const postPublishedDate = new Date(props.post.published_at);
+  const postPublishedString = postPublishedDate.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
   return (
     <div className="gh-canvas">
       <h1 className="text-3xl">{props.post.title}</h1>
-      <Image width={800} height={500} src={props.post.feature_image} />
-
+      <p className="my-3 text-base">
+        {postPublishedString} — {props.post.reading_time} min read
+      </p>
+      <div className="my-10">
+        <Image width={800} height={500} src={props.post.feature_image} />
+      </div>
       <div
-        className="gh-content"
+        className="gh-content my-3"
         dangerouslySetInnerHTML={{__html: props.post.html}}
       />
     </div>

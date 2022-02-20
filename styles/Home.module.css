@@ -4,7 +4,7 @@
   @apply bg-white dark:bg-slate-800;
 }
 .main {
-  min-height: vh;
+  min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;

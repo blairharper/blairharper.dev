@@ -26,6 +26,6 @@ export async function getStaticProps(context: any) {
 
   return {
     props: {posts},
-    revalidate: 60 * 60 * 12, // refetch posts every 12 hours (in seconds)
+    revalidate: 60 * 60 * 24, // refetch posts every 24 hours (in seconds)
   };
 }

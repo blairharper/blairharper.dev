@@ -35,15 +35,15 @@ export default function PostPage(props: any) {
   });
   return (
     <div className="gh-canvas">
-      <h1 className="text-3xl">{props.post.title}</h1>
-      <p className="my-3 text-base">
+      <h1 className="text-3xl dark:text-slate-200">{props.post.title}</h1>
+      <p className="my-3 text-base dark:text-slate-400">
         {postPublishedString} — {props.post.reading_time} min read
       </p>
       <div className="my-10">
         <Image width={800} height={500} src={props.post.feature_image} />
       </div>
       <div
-        className="gh-content my-3"
+        className="gh-content my-3 dark:text-slate-200"
         dangerouslySetInnerHTML={{__html: props.post.html}}
       />
     </div>

@@ -23,8 +23,8 @@ function NavLink({href, name}: {href: string; name: string}) {
           className={clsx(
             'underlined hover:text-team-current focus:text-team-current block whitespace-nowrap text-lg font-medium focus:outline-none',
             {
-              'active text-primary underline': isSelected,
-              'text-slate-500': !isSelected,
+              'active text-primary underline dark:text-slate-100': isSelected,
+              'text-slate-500 dark:text-slate-400': !isSelected,
             },
           )}>
           {name}
@@ -40,7 +40,7 @@ const NavBar = () => {
       <nav className="max-w-8xl mx-auto flex max-w-6xl items-center justify-between">
         <div>
           <Link href="/">
-            <a className="underlined block whitespace-nowrap text-2xl font-medium transition focus:outline-none">
+            <a className="underlined block whitespace-nowrap text-2xl font-medium transition focus:outline-none dark:text-slate-100">
               Blair Harper
             </a>
           </Link>

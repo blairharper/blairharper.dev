@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import clsx from 'clsx';
-
+import SunIcon from './icons/SunIcon';
+import MoonIcon from './icons/MoonIcon';
 const LINKS = [
   {name: 'Blog', href: '/'},
   {name: 'About', href: '/about'},
@@ -33,8 +34,7 @@ function NavLink({href, name}: {href: string; name: string}) {
     </li>
   );
 }
-
-const NavBar = () => {
+const NavBar = ({setIsDarkMode, isDarkMode}) => {
   return (
     <div className="px-5vw py-9 lg:py-12">
       <nav className="max-w-8xl mx-auto flex max-w-6xl items-center justify-between">
@@ -50,6 +50,25 @@ const NavBar = () => {
             <NavLink href={href} name={name} key={name} />
           ))}
         </ul>
+        <div className="relative h-14 w-14">
+          {isDarkMode ? (
+            <button
+              className="focus:border-primary inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-slate-600 p-1 transition hover:border-slate-200 focus:outline-none"
+              onClick={() => setIsDarkMode(false)}>
+              <span className="absolute inset-0">
+                <SunIcon />
+              </span>
+            </button>
+          ) : (
+            <button
+              className="focus:border-primary inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200 p-1 transition hover:border-slate-600 focus:outline-none"
+              onClick={() => setIsDarkMode(true)}>
+              <span className="absolute inset-0  transform text-black transition duration-1000 motion-reduce:duration-[0s]  dark:text-black">
+                <MoonIcon />
+              </span>
+            </button>
+          )}
+        </div>
       </nav>
     </div>
   );

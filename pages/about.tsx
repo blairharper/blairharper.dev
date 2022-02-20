@@ -3,7 +3,9 @@ import React from 'react';
 export default function About() {
   return (
     <>
-      <p>About Placeholder...</p>
+      <article className="prose dark:prose-invert">
+        <p>About Placeholder...</p>
+      </article>
     </>
   );
 }

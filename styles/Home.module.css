@@ -1,7 +1,6 @@
 .container {
   padding: 0 2rem;
   padding-left: calc(100vw - 100%);
-  @apply bg-white dark:bg-slate-800;
 }
 .main {
   min-height: 100vh;

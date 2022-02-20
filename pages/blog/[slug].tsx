@@ -40,12 +40,14 @@ export default function PostPage(props: any) {
         {postPublishedString} — {props.post.reading_time} min read
       </p>
       <div className="my-10">
-        <Image width={800} height={500} src={props.post.feature_image} />
+        <Image width={900} height={600} src={props.post.feature_image} />
       </div>
-      <div
-        className="gh-content my-3 dark:text-slate-200"
-        dangerouslySetInnerHTML={{__html: props.post.html}}
-      />
+      <div className="grid place-items-center">
+        <div
+          className="gh-content prose my-3 max-w-3xl dark:prose-invert"
+          dangerouslySetInnerHTML={{__html: props.post.html}}
+        />
+      </div>
     </div>
   );
 }

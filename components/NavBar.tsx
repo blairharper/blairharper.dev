@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import clsx from 'clsx';
 
 const LINKS = [
-  {name: 'Home', href: '/'},
+  {name: 'Blog', href: '/'},
   {name: 'About', href: '/about'},
   {name: 'Contact', href: '/contact'},
 ];
@@ -11,8 +11,10 @@ const LINKS = [
 function NavLink({href, name}: {href: string; name: string}) {
   const router = useRouter();
   const pathname = router.pathname;
-  const isSelected = pathname === href || pathname.startsWith(href + '/');
-
+  const isSelected =
+    pathname === href ||
+    pathname.startsWith(`${href}/`) ||
+    (pathname.startsWith('/blog') && href === '/');
   return (
     <li className="px-5 py-2" key={name}>
       <Link href={href}>

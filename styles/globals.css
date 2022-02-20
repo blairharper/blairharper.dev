@@ -90,20 +90,20 @@ body {
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p {
-  font-weight: 300;
-  font-size: 1.4rem;
+  font-weight: normal;
+  font-size: 1.125rem;
   line-height: 1.6em;
   @apply font-sans;
 }
 
 .gh-content > h2 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.6rem;
   line-height: 1.6em;
 }
 
 .gh-content a {
-  font-weight: 400;
+  font-weight: normal;
   font-size: 1.4rem;
   line-height: 1.6em;
   color: #4c1d95;

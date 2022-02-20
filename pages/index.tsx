@@ -1,5 +1,4 @@
 import {getPosts} from '../lib/posts';
-import Link from 'next/link';
 import PostCard from '../components/PostCard';
 
 export default function Home(props: any) {

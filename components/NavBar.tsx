@@ -22,7 +22,7 @@ function NavLink({href, name}: {href: string; name: string}) {
         <a
           key={href}
           className={clsx(
-            'underlined hover:text-team-current focus:text-team-current block whitespace-nowrap text-lg font-medium focus:outline-none',
+            'hover:text-primary block whitespace-nowrap text-lg font-medium underline-offset-4 hover:underline focus:outline-none hover:dark:text-slate-100',
             {
               'active text-primary underline dark:text-slate-100': isSelected,
               'text-slate-500 dark:text-slate-400': !isSelected,

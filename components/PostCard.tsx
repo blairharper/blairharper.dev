@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+
 export default function PostCard(post: {
   slug: string;
   title: string;

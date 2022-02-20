@@ -3,6 +3,7 @@ import {useRouter} from 'next/router';
 import clsx from 'clsx';
 import SunIcon from './icons/SunIcon';
 import MoonIcon from './icons/MoonIcon';
+
 const LINKS = [
   {name: 'Blog', href: '/'},
   {name: 'About', href: '/about'},

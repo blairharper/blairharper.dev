@@ -1,5 +1,6 @@
 import {getSinglePost, getPosts} from '../../lib/posts';
 import Image from 'next/image';
+
 export async function getStaticPaths() {
   const posts = await getPosts();
 

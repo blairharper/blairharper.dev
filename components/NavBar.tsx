@@ -64,7 +64,7 @@ const NavBar = ({setIsDarkMode, isDarkMode}) => {
             <button
               className="focus:border-primary inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200 p-1 transition hover:border-slate-600 focus:outline-none"
               onClick={() => setIsDarkMode(true)}>
-              <span className="absolute inset-0  transform text-black transition duration-1000 motion-reduce:duration-[0s]  dark:text-black">
+              <span className="absolute inset-0">
                 <MoonIcon />
               </span>
             </button>
